@@ -1,7 +1,7 @@
 
 function page() {
   return (
-    <div className="max-w-6xl mx-auto space-y-5"
+    <div className="ml-5 max-w-6xl mx-auto space-y-5"
     >
         <h1 className="text-2xl font-medium text-red-500">About 🎬</h1>
         <p className="">
@@ -15,7 +15,7 @@ function page() {
                 <li className="mt-4 mb-4" ><span className="font-semibold">Our Mission 🌐 : </span>At MyMovieDB, our mission is to bring the joy of movies and TV to everyone, everywhere. We believe in connecting people through storytelling and making it easy for fans to explore, share, and celebrate the art of filmmaking.</li>
                 <li className="mt-2 mb-2"><span className="font-semibold">Join Our Community 🎭: </span>Whether you’re a casual viewer or a film buff, MyMovieDB is here for you. Create an account, join discussions, rate your favorite movies, and be part of a community that celebrates the magic of entertainment!</li>
             </ol>
-            <h1 className="font-semibold">Happy watching! 🍿</h1>
+            <h1 className="font-bold">Happy watching! 🍿</h1>
         </p>
     </div>
   )

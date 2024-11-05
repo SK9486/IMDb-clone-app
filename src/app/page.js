@@ -1,11 +1,21 @@
 import Image from "next/image";
-
-export default function Home() {
+import Results from "./components/Results";
+const API_KEY = process.env.API_KEY;
+export default async function Home({searchParams}) {
+  const genre = searchParams?.genre || "fetchTrending";
+  const res = await fetch(
+    `https://api.themoviedb.org/3/${
+      genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
+    }?api_key=79266ac2395bdfd9ef624b2d52a20a4f&language=en-US&page=1`,
+    { next: { revalidate: 10000 } }
+  );
+  const data = await res.json();
+  const results = data.results;
+  console.log(results);
   return (
     <div >
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Results results={results}/>
+      <h1>Hell World</h1>
     </div>
   );
 }

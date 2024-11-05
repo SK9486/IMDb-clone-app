@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Results from "./components/Results";
+import Errors from "./errors";
 const API_KEY = process.env.API_KEY;
 export default async function Home({searchParams}) {
   const genre = searchParams?.genre || "fetchTrending";
@@ -11,11 +12,12 @@ export default async function Home({searchParams}) {
   );
   const data = await res.json();
   const results = data.results;
-  console.log(results);
+  // console.log(results);
   return (
     <div >
       <Results results={results}/>
       <h1>Hell World</h1>
+      <Errors/>
     </div>
   );
 }
